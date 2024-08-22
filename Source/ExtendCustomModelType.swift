@@ -15,7 +15,7 @@ public protocol _ExtendCustomModelType: _Transformable {
     mutating func didFinishMapping()
 }
 
-extension _ExtendCustomModelType {
+open extension _ExtendCustomModelType {
 
     public mutating func willStartMapping() {}
     public mutating func mapping(mapper: HelpingMapper) {}
@@ -110,7 +110,7 @@ extension NSObject {
     }
 }
 
-extension _ExtendCustomModelType {
+open extension _ExtendCustomModelType {
 
     static func _transform(from object: Any) -> Self? {
         if let dict = object as? [String: Any] {
@@ -178,7 +178,7 @@ extension _ExtendCustomModelType {
     }
 }
 
-extension _ExtendCustomModelType {
+open extension _ExtendCustomModelType {
 
     func _plainValue() -> Any? {
         return Self._serializeAny(object: self)
